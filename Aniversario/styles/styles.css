@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fccbcd, #fad0c4);
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 10%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Balões */
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  width: 60px;
+  height: 80px;
+  border-radius: 50% 50% 45% 45%;
+  background: red;
+  animation: floatUp 8s linear infinite;
+}
+
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: #555;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img img {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: absolute;
+  top: 400px;
+  left: 40%;
+  height: 400px;
+  width: 350px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* Confetes */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  background: yellow;
+  top: -20px;
+  animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
